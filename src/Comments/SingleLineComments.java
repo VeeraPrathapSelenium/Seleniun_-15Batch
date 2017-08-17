@@ -3,7 +3,16 @@ package Comments;
 public class SingleLineComments {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// Sigle line comments
+		
+		
+		int a=10;
+		
+		
+		int b=20;
+		//Comment reason:-
+		
+		//int c=40;
 
 	}
 
