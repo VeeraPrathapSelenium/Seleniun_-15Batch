@@ -23,5 +23,10 @@ public class ClassB extends ClassA {
 		ClassB b=new ClassB();
 		ClassB b1=new ClassB(2,6);
 	}
+	
+	
+
+	
+	
 
 }
