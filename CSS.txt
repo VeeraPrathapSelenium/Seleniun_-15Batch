@@ -1,0 +1,136 @@
+Css Selectors
+
+It identify the webelements on DOM based on the css propoerties given by the developer
+
+CSS selector is very quick in performance
+
+Should be little cautious in writing CSS Selector
+
+
+Syntax:
+
+
+htmltag[attribute='value']
+
+
+When you know an ID of an element use the below syntax 
+
+# value    
+
+#-->Represents ID
+
+
+
+1)Combining one or more attributes to identifyt the element more uniquely
+
+
+htmltag[attribute='value'][attribute='value']......[attribute='value']
+
+
+Example
+
+<select id="day" class="_5dba" title="Day" name="birthday_day" aria-label="Day">
+
+select[id='day'][name='birthday_day']
+
+
+2)Drill down CSS Selectors
+
+Select all the options tag under select tag using css selector
+
+
+<select id="day" class="_5dba" title="Day" name="birthday_day" aria-label="Day">
+	<option value="0">Day</option>
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+</select >
+
+
+Syntax:-
+select[id='day']>option
+
+3)
+Select the 3 option tag under select tag using css selector
+
+
+<select id="day" class="_5dba" title="Day" name="birthday_day" aria-label="Day">
+	<option value="0">Day</option>
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+</select >
+
+select[id='day']>option:nth-child(3)
+
+
+4)Handling Dynamic Attributes
+
+
+^--Starts-with
+
+Syntax
+
+Htmltag[attribute^='Value']
+
+
+*--Contains
+
+Syntax
+
+Htmltag[attribute*='Value']
+
+$--Ends-With
+
+Syntax
+
+Htmltag[attribute$='Value']
+
+
+
+Example:
+
+Find the select tag that starts with id =da using css selector
+
+
+html tag
+<select id="day" class="_5dba" title="Day" name="birthday_day" aria-label="Day">
+
+CSS Selector:
+select[id^='da']
+
+
+
+Find the select tag that contains with id =da using css selector
+
+
+html tag
+<select id="day" class="_5dba" title="Day" name="birthday_day" aria-label="Day">
+
+CSS Selector:
+select[id*='da']
+
+Note:-This will return one or more elements hence store it in a list of type "WebElement"
+
+
+
+Find the select tag that Ends with id =Y using css selector
+
+
+html tag
+<select id="day" class="_5dba" title="Day" name="birthday_day" aria-label="Day">
+
+CSS Selector:
+select[id$='y']
+
+Note:-This will return one or more elements hence store it in a list of type "WebElement"
+
+
+
+
+
+
+
+

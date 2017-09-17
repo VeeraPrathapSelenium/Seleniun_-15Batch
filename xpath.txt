@@ -1,0 +1,101 @@
+1)//select[@id='day']/option
+
+select all the options under the select tag
+
+
+2)//select[@id='day']/option[1]
+
+select only first option under the select tag
+
+
+
+3)
+
+HTMLTag
+
+<select id="day" class="_5dba" title="Day" name="birthday_day" aria-label="Day">
+	<option value="0">Day</option>
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+   
+</select>
+
+Retrive the siblings of option 1
+
+Xpath:
+//select[@id='day']/option/following-sibling::option
+
+
+4)
+
+<select id="day" class="_5dba" title="Day" name="birthday_day" aria-label="Day">
+	<option value="0">Day</option>
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+   
+</select>
+
+Retrive the preceding siblings of option5
+
+//select[@id='day']/option[6]/preceding-sibling::option
+
+
+
+5)
+
+<select id="day" class="_5dba" title="Day" name="birthday_day" aria-label="Day">
+	<option value="0">Day</option>
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+   
+</select>
+
+<select id="Week" class="_5dba" title="Day" name="birthday_day" aria-label="Day">
+	<option value="0">week</option>
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+   
+</select>
+
+
+
+Retrive all the options tag available in day and week that are after option 4 in day tag
+
+//select[@id='day']/option[3]/following::option
+
+
+6)
+Retrive all the childern under select tag
+
+<select id="day" class="_5dba" title="Day" name="birthday_day" aria-label="Day">
+	<option value="0">Day</option>
+	<input type="text" name="username">
+	<option value="1">1</option>
+<img>
+<a>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+  
+</select> 
+//select[@id='day']/child::*
+
+
+This will retrive all the html tags that are available under select tag
+
+//select[@id='day']/child::option
+
+This will retrive only option tag that are available under select tag
+
