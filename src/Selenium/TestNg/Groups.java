@@ -2,7 +2,6 @@ package Selenium.TestNg;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -12,17 +11,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class AnnotationsImplementations {
+public class Groups {
 	
-	public static  Properties prop;
+	
+	
+public static  Properties prop;
 	
 	public static WebDriver driver;
 	
@@ -30,9 +27,7 @@ public class AnnotationsImplementations {
 	
 	public static SoftAssert asserts=new SoftAssert();
 	
-	@BeforeTest
-	
-	public static void getOR()  
+	static 
 	
 	{
 		File f=new File("ObjectRepository.properties");
@@ -43,6 +38,8 @@ public class AnnotationsImplementations {
 		prop=new Properties();
 		
 		prop.load(fis);
+		
+		System.out.println("props loaded");
 		
 		}
 		catch(Exception e)
@@ -61,14 +58,14 @@ public class AnnotationsImplementations {
 	
 
 	
-	@Test(testName="Launching FireFox Browser with the HRM application",priority=1)
+	@Test(testName="Launching FireFox Browser with the HRM application",priority=1,dataProviderClass=TestData.class,dataProvider="Login Credentials",groups="smoketest")
 	
-	public static void LaunchBrowser()
+	public static void LaunchBrowser(String username,String Password )
 	{
 		
 		driver=new FirefoxDriver();
 
-		driver.get(url);
+		driver.get(url);  
 		
 		driver.manage().window().maximize();
 		
@@ -76,28 +73,19 @@ public class AnnotationsImplementations {
 		
 		driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
 		
-		asserts.assertEquals(url, "https://www.testingmasters.com");
-		System.out.println("Browser is launched sucessfully");
-	}
-	
-	
-	@Test(testName="Logging into HRM application",priority=2,dataProviderClass=TestData.class,dataProvider="Login Credentials",dependsOnMethods="LaunchBrowser")
-	
-	public static void Login(String username,String Password)
-	{
 		driver.findElement(By.id(prop.getProperty("Username_ID"))).sendKeys(username);
 		
 		driver.findElement(By.id(prop.getProperty("Password_ID"))).sendKeys(Password);
 		
 		driver.findElement(By.id(prop.getProperty("LoginButton_ID"))).click();
 		
-	
-
+		
 		
 	}
 	
+
 	
-	@Test(testName="MyInfo",dependsOnMethods="Login",priority=3)
+	@Test(testName="MyInfo",priority=2,groups="smoketest")
 	
 	public static void MyInfo()
 	{
@@ -108,10 +96,22 @@ public class AnnotationsImplementations {
 		 
 		asserts.assertAll();
 	}
+	
+	@Test(testName="MyInfo",priority=3,groups="RegularTestcase")
+	
+	public static void editPersonalDetails()
+	{
+		
+		driver.findElement(By.id("btnSave")).click();
+		
+		
+		driver.findElement(By.id("personal_txtEmpFirstName")).clear();
+		driver.findElement(By.id("personal_txtEmpFirstName")).sendKeys("Hello");
+		
+		driver.findElement(By.id("btnSave")).click();
+	}
 
 	
 	
-	
-	
-	
+
 }

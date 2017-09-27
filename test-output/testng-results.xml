@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="13544" started-at="2017-09-20T02:51:37Z" finished-at="2017-09-20T02:51:50Z">
+  <suite name="Default suite" duration-ms="23126" started-at="2017-09-27T02:49:38Z" finished-at="2017-09-27T02:50:01Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="13544" started-at="2017-09-20T02:51:37Z" finished-at="2017-09-20T02:51:50Z">
-      <class name="Selenium.TestNg.AnnotationsImplementations">
-        <test-method status="PASS" signature="getOR()[pri:0, instance:Selenium.TestNg.AnnotationsImplementations@14acaea5]" name="getOR" is-config="true" duration-ms="15" started-at="2017-09-20T08:21:37Z" finished-at="2017-09-20T08:21:37Z">
+    <test name="Default test" duration-ms="23126" started-at="2017-09-27T02:49:38Z" finished-at="2017-09-27T02:50:01Z">
+      <class name="com.ExtentReports.StartingWithExtentReports">
+        <test-method status="PASS" signature="intializeExtentReport()[pri:0, instance:com.ExtentReports.StartingWithExtentReports@6d4b1c02]" name="intializeExtentReport" is-config="true" duration-ms="288" started-at="2017-09-27T08:19:38Z" finished-at="2017-09-27T08:19:38Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getOR -->
-        <test-method status="PASS" signature="LaunchBrowser()[pri:1, instance:Selenium.TestNg.AnnotationsImplementations@14acaea5]" name="LaunchBrowser" duration-ms="10144" started-at="2017-09-20T08:21:37Z" finished-at="2017-09-20T08:21:47Z">
+        </test-method> <!-- intializeExtentReport -->
+        <test-method status="PASS" signature="startExtentReport()[pri:0, instance:com.ExtentReports.StartingWithExtentReports@6d4b1c02]" name="startExtentReport" is-config="true" duration-ms="5" started-at="2017-09-27T08:19:38Z" finished-at="2017-09-27T08:19:38Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LaunchBrowser -->
-        <test-method status="PASS" signature="Login()[pri:2, instance:Selenium.TestNg.AnnotationsImplementations@14acaea5]" name="Login" duration-ms="3355" started-at="2017-09-20T08:21:47Z" finished-at="2017-09-20T08:21:50Z">
+        </test-method> <!-- startExtentReport -->
+        <test-method status="PASS" signature="startTest()[pri:0, instance:com.ExtentReports.StartingWithExtentReports@6d4b1c02]" name="startTest" duration-ms="21956" started-at="2017-09-27T08:19:38Z" finished-at="2017-09-27T08:20:00Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Login -->
-      </class> <!-- Selenium.TestNg.AnnotationsImplementations -->
+        </test-method> <!-- startTest -->
+        <test-method status="PASS" signature="endExtentReports()[pri:0, instance:com.ExtentReports.StartingWithExtentReports@6d4b1c02]" name="endExtentReports" is-config="true" duration-ms="91" started-at="2017-09-27T08:20:00Z" finished-at="2017-09-27T08:20:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endExtentReports -->
+        <test-method status="PASS" signature="generateReport()[pri:0, instance:com.ExtentReports.StartingWithExtentReports@6d4b1c02]" name="generateReport" is-config="true" duration-ms="760" started-at="2017-09-27T08:20:00Z" finished-at="2017-09-27T08:20:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- generateReport -->
+      </class> <!-- com.ExtentReports.StartingWithExtentReports -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
